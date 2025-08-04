@@ -41,7 +41,7 @@ module OpenAI
                 OpenAI::Errors::APIError.for(
                   url: @url,
                   status: @status,
-                  body: body,
+                  body: nil, # When streaming, there is no equivalent to the raw response body, the information is present in the message.
                   request: nil,
                   response: @response,
                   message: message
